@@ -197,6 +197,9 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
         <div class="status-label">制限時間</div>
         <div class="status-value" id="timeLeft">-</div>
       </div>
+      <div class="status-item" id="pauseBtnWrap" style="display:none;">
+        <button id="pauseBtn" onclick="togglePause()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);border-radius:8px;padding:4px 10px;color:#fff;font-size:0.9rem;cursor:pointer;">⏸</button>
+      </div>
     </div>
     <div class="current-word-box">
       <div class="current-word-label" id="turnLabel">🤖 CPUの言葉</div>
@@ -354,6 +357,7 @@ let cpuWins = 0;
 let timerInterval = null;
 let timeLeft = 30;
 let gameActive = false;
+let isPaused = false;
 let usedWords = new Set();
 
 const DIFF_DESC = {
@@ -369,6 +373,23 @@ function setDiff(btn, diff) {
   document.getElementById('diffDesc').textContent = DIFF_DESC[diff];
 }
 
+function togglePause() {
+  if (!gameActive || difficulty === 'easy') return;
+  isPaused = !isPaused;
+  const btn = document.getElementById('pauseBtn');
+  const input = document.getElementById('wordInput');
+  const submit = document.getElementById('submitBtn');
+  if (isPaused) {
+    if (btn) btn.textContent = '▶';
+    if (input) input.disabled = true;
+    if (submit) submit.disabled = true;
+  } else {
+    if (btn) btn.textContent = '⏸';
+    if (input) { input.disabled = false; input.focus(); }
+    if (submit) submit.disabled = false;
+  }
+}
+
 function startGame() {
   document.getElementById('setupCard').classList.add('hidden');
   document.getElementById('resultCard').classList.add('hidden');
@@ -377,6 +398,9 @@ function startGame() {
   gameWords = [];
   turnCount = 0;
   gameActive = true;
+  isPaused = false;
+  const pbw = document.getElementById('pauseBtnWrap');
+  if (pbw) pbw.style.display = difficulty !== 'easy' ? 'block' : 'none';
   // CPU starts
   const startWords = WORD_DB[difficulty].filter(w => !w.startsWith('ん'));
   const startWord = startWords[Math.floor(Math.random() * startWords.length)];
@@ -393,6 +417,7 @@ function startTimer() {
   timeLeft = difficulty === 'hard' ? 15 : 30;
   document.getElementById('timeLeft').textContent = timeLeft;
   timerInterval = setInterval(() => {
+    if (isPaused) return;
     timeLeft--;
     document.getElementById('timeLeft').textContent = timeLeft;
     if (timeLeft <= 0) {
@@ -495,7 +520,10 @@ function giveUp() {
 
 function endGame(reason) {
   gameActive = false;
+  isPaused = false;
   clearInterval(timerInterval);
+  const pbw = document.getElementById('pauseBtnWrap'); if (pbw) pbw.style.display = 'none';
+  const pb = document.getElementById('pauseBtn'); if (pb) pb.textContent = '⏸';
   document.getElementById('gameCard').classList.add('hidden');
   document.getElementById('resultCard').classList.remove('hidden');
   const isWin = reason === 'cpu_lose';
