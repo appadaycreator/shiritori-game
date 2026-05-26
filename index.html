@@ -80,6 +80,8 @@
     .hidden { display: none; }
     .celebration { font-size: 2rem; text-align: center; padding: 1rem; animation: pop 0.3s ease; }
     @keyframes pop { 0%{transform:scale(0.8);opacity:0} 100%{transform:scale(1);opacity:1} }
+    @keyframes sh-shake { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-6px)} 40%{transform:translateX(6px)} 60%{transform:translateX(-4px)} 80%{transform:translateX(4px)} }
+    .sh-shake { animation: sh-shake 0.35s ease; }
   
 /* Phase 8: Mobile Optimization */
 input, select, textarea { font-size: 16px !important; }
@@ -447,10 +449,16 @@ function showMessage(msg, type) {
   box.textContent = msg;
   box.className = `message-box msg-${type}`;
   box.classList.remove('hidden');
+  // K6横展開: エラー時にwordInputをシェイク
+  if (type === 'error') {
+    const inp = document.getElementById('wordInput');
+    if (inp) { inp.classList.add('sh-shake'); setTimeout(() => inp.classList.remove('sh-shake'), 350); }
+  }
 }
 
 function submitWord() {
   if (!gameActive) return;
+  if (isPaused) return; // K2横展開: ポーズ中は無効
   const raw = document.getElementById('wordInput').value.trim();
   // Convert katakana to hiragana
   const word = raw.replace(/[ァ-ヶ]/g, m => String.fromCharCode(m.charCodeAt(0) - 0x60));
