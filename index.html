@@ -102,6 +102,8 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
   a[href]::after{content:none!important}
 }
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}
+.related-link{padding:10px;text-align:center;border:1px solid #ddd;border-radius:4px;text-decoration:none;color:#333;display:block;transition:background 0.15s;}
+.related-link:hover{background:#f5f5f5;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"しりとりゲームは無料で使えますか？","acceptedAnswer":{"@type":"Answer","text":"はい、完全無料でご利用いただけます。登録・ログイン不要ですぐに使えます。"}},{"@type":"Question","name":"入力したデータはどこに保存されますか？","acceptedAnswer":{"@type":"Answer","text":"入力データはお使いのデバイス内にのみ保存されます。外部サーバーへの送信は行いません。"}},{"@type":"Question","name":"しりとりゲームの計算・診断結果はどのくらい正確ですか？","acceptedAnswer":{"@type":"Answer","text":"本ツールの結果はあくまで参考情報です。重要な判断の際は専門家にご相談ください。"}},{"@type":"Question","name":"どのような人が使っていますか？","acceptedAnswer":{"@type":"Answer","text":"初心者から専門家まで、多くの方にご利用いただいています。特に決断が必要な場面で活躍します。"}},{"@type":"Question","name":"結果をシェアできますか？","acceptedAnswer":{"@type":"Answer","text":"はい、診断結果はスクリーンショットやURLで友人・家族とシェアできます。"}},{"@type":"Question","name":"有料プランはありますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ、すべての機能を完全無料でご利用いただけます。"}},{"@type":"Question","name":"スコアは保存されますか？","acceptedAnswer":{"@type":"Answer","text":"スコアはブラウザのローカルストレージに保存されます。ブラウザのデータを削除するとリセットされます。"}},{"@type":"Question","name":"オフラインで遊べますか？","acceptedAnswer":{"@type":"Answer","text":"初回表示後はキャッシュを利用して遊べる場合があります。ただし一部の機能はオンライン接続が必要です。"}}]}</script>
 <script type="application/ld+json">
@@ -658,10 +660,10 @@ document.addEventListener('keydown', function(e) {
 <section style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
   <h3 style="font-size: 18px; margin-bottom: 15px;">関連サービス</h3>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px;">
-    <a href="https://appadaycreator.com/dog-walk-tracker/" style="padding: 10px; text-align: center; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; color: #333; display: block; hover:background: #f5f5f5;">犬の散歩記録アプリ</a>
-    <a href="https://appadaycreator.com/emergency-bag-checker/" style="padding: 10px; text-align: center; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; color: #333; display: block; hover:background: #f5f5f5;">非常持ち出し袋チェッカー</a>
-    <a href="https://appadaycreator.com/logic-grid-puzzle/" style="padding: 10px; text-align: center; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; color: #333; display: block; hover:background: #f5f5f5;">論理グリッドパズル</a>
-    <a href="https://appadaycreator.com/content-calendar-maker/" style="padding: 10px; text-align: center; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; color: #333; display: block; hover:background: #f5f5f5;">コンテンツカレンダー作成ツール</a>
+    <a href="https://appadaycreator.com/dog-walk-tracker/" class="related-link">犬の散歩記録アプリ</a>
+    <a href="https://appadaycreator.com/emergency-bag-checker/" class="related-link">非常持ち出し袋チェッカー</a>
+    <a href="https://appadaycreator.com/logic-grid-puzzle/" class="related-link">論理グリッドパズル</a>
+    <a href="https://appadaycreator.com/content-calendar-maker/" class="related-link">コンテンツカレンダー作成ツール</a>
   </div>
 </section>
 
