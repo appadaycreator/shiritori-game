@@ -111,9 +111,6 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"しりとりゲームは無料で使えますか？","acceptedAnswer":{"@type":"Answer","text":"はい、完全無料でご利用いただけます。登録・ログイン不要ですぐに使えます。"}},{"@type":"Question","name":"入力したデータはどこに保存されますか？","acceptedAnswer":{"@type":"Answer","text":"入力データはお使いのデバイス内にのみ保存されます。外部サーバーへの送信は行いません。"}},{"@type":"Question","name":"しりとりゲームの計算・診断結果はどのくらい正確ですか？","acceptedAnswer":{"@type":"Answer","text":"本ツールの結果はあくまで参考情報です。重要な判断の際は専門家にご相談ください。"}},{"@type":"Question","name":"どのような人が使っていますか？","acceptedAnswer":{"@type":"Answer","text":"初心者から専門家まで、多くの方にご利用いただいています。特に決断が必要な場面で活躍します。"}},{"@type":"Question","name":"結果をシェアできますか？","acceptedAnswer":{"@type":"Answer","text":"はい、診断結果はスクリーンショットやURLで友人・家族とシェアできます。"}},{"@type":"Question","name":"有料プランはありますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ、すべての機能を完全無料でご利用いただけます。"}},{"@type":"Question","name":"スコアは保存されますか？","acceptedAnswer":{"@type":"Answer","text":"スコアはブラウザのローカルストレージに保存されます。ブラウザのデータを削除するとリセットされます。"}},{"@type":"Question","name":"オフラインで遊べますか？","acceptedAnswer":{"@type":"Answer","text":"初回表示後はキャッシュを利用して遊べる場合があります。ただし一部の機能はオンライン接続が必要です。"}}]}</script>
 <script type="application/ld+json">
-
-</script>
-<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -235,6 +232,15 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
     <div class="celebration" id="resultEmoji"></div>
     <h2 style="text-align:center;" id="resultTitle"></h2>
     <p style="text-align:center;color:#b0bec5;margin-top:0.5rem;" id="resultDesc"></p>
+    <!-- P2改善: 結果直後の文脈アフィリエイトCTA -->
+    <div style="background:rgba(128,203,196,0.15);border:2px solid rgba(128,203,196,0.4);border-radius:12px;padding:1rem;margin:1rem 0;text-align:center;">
+      <div style="font-size:0.9rem;color:#80cbc4;margin-bottom:0.6rem;font-weight:700;">🎓 語彙力をもっと伸ばしたい方へ</div>
+      <p style="font-size:0.85rem;color:#ccc;margin:0 0 0.8rem;line-height:1.6;">このゲームで語彙力が身についたら、より深く学習できる本で次のステップへ。</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;">
+        <a href="https://www.amazon.co.jp/s?k=語彙力+言葉遊び+本&tag=appadaycrea0f-22" target="_blank" rel="noopener" style="background:#ff9900;color:#fff;padding:0.5rem 1rem;border-radius:8px;font-size:0.85rem;font-weight:700;text-decoration:none;display:inline-block;cursor:pointer;">📚 語彙力本を今すぐチェック →</a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ6+FQ9JMY+1LP8+BY642" target="_blank" rel="nofollow noopener noreferrer" style="background:#0066cc;color:#fff;padding:0.5rem 1rem;border-radius:8px;font-size:0.85rem;font-weight:700;text-decoration:none;display:inline-block;cursor:pointer;">💰 ポイントで得する →</a>
+      </div>
+    </div>
     <div class="score-display" style="margin-top:1rem;">
       <div class="score-box"><div class="sv player-score" id="resultPlayerWin">0</div><div class="sl">あなたの勝利数</div></div>
       <div class="score-box"><div class="sv cpu-score" id="resultCpuWin">0</div><div class="sl">CPUの勝利数</div></div>
@@ -269,26 +275,67 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
   <div style="max-width:680px;margin:0 auto;">
     <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
       <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 難易度を変えることはできますか？ <span>▼</span></summary>
-      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">初期設定の難易度でお楽しみいただけます。スコアが上がるにつれて自動的に難易度が上がる仕組みになっています。</p>
+      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">はい、ゲーム開始前の設定画面で「かんたん・ふつう・むずかしい」の3段階から選択できます。いつでも変更可能です。</p>
     </details>
     <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
       <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. スコアを記録・シェアできますか？ <span>▼</span></summary>
       <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">SNSシェアボタンからスコアをシェアできます。ランキング機能は現在未対応です。</p>
     </details>
     <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
-      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. このサービスは無料で使えますか？ <span>▼</span></summary>
+      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 難しい言葉が思い出せない場合はどうすればいいですか？ <span>▼</span></summary>
+      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">かんたん・ふつうモードでは「💡 ヒント」ボタンが使えます。1ゲーム3回まで、次の文字から始まる単語の候補を表示します。むずかしいモードはスピード重視のため、ヒント機能はありません。</p>
+    </details>
+    <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
+      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 「ん」で終わる言葉を言ったら必ず負けですか？ <span>▼</span></summary>
+      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">はい。しりとりの基本ルールとして、「ん」で終わる言葉を言った方が負けになります。本ゲームでも同じルールです。例：「みかん」「せんせい」など「ん」で終わる言葉は厳禁です。</p>
+    </details>
+    <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
+      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 「を」「は」などの助詞から始まる言葉が使えないのはなぜですか？ <span>▼</span></summary>
+      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">一般的なしりとりのルールでは、助詞から始まる言葉は使用禁止とされています。本ゲームでも同様です。「を」「は」「が」「に」「で」などの助詞から始まる言葉は除外されています。</p>
+    </details>
+    <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
+      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. むずかしいモードで高スコアを出すコツは？ <span>▼</span></summary>
+      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">むずかしいモードは15秒制限のため、迅速な判断が必須です。①常用漢字の音読み・訓読み、②地名・人名、③一般的な4文字以上の単語を普段から意識する、④猫、犬などの短い言葉から長い言葉への繋ぎを練習する、の4点が効果的です。</p>
+    </details>
+    <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
+      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. このゲームは無料で使えますか？ <span>▼</span></summary>
       <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">はい、完全無料でご利用いただけます。登録・ログイン不要で、すぐにお使いいただけます。</p>
-    </details>
-    <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
-      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 入力したデータはどこに保存されますか？ <span>▼</span></summary>
-      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">入力データはサーバーに送信されません。お使いのブラウザ上でのみ処理されます。</p>
-    </details>
-    <details style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;overflow:hidden;">
-      <summary style="padding:12px 16px;cursor:pointer;font-size:14px;font-weight:600;color:#334155;background:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 何度でも使えますか？ <span>▼</span></summary>
-      <p style="padding:12px 16px;font-size:13px;color:#475569;margin:0;background:#f8fafc;">はい、何度でも無料でご利用いただけます。条件を変えてお試しいただけます。</p>
     </details>
   </div>
 </section>
+</div>
+
+<!-- SHIRITORI KNOWLEDGE -->
+<div class="max-w-lg mx-auto px-4" style="margin-bottom:16px">
+  <div style="background:#fff;border-radius:14px;padding:16px;box-shadow:0 2px 12px rgba(0,0,0,.06)">
+    <h2 style="font-size:15px;font-weight:700;color:#1e293b;margin:0 0 10px;border-left:3px solid #6366f1;padding-left:10px">🎯 しりとりを強くなるための戦略</h2>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="background:#eff6ff;border-radius:8px;padding:10px">
+        <p style="font-size:13px;font-weight:700;color:#1e40af;margin:0 0 3px">① 「り」「る」「ろ」で終わる言葉を増やす</p>
+        <p style="font-size:12px;color:#374151;line-height:1.7;margin:0">しりとりで最も重要なのは「り」「る」「ろ」で終わる言葉を多く知ること。相手がこれらで終わる言葉を言った後に続けやすくなります。例：「しんかいぎょ（魚）→よるがお→おかし」という流れを意識的に作る。</p>
+      </div>
+      <div style="background:#f0fdf4;border-radius:8px;padding:10px">
+        <p style="font-size:13px;font-weight:700;color:#166534;margin:0 0 3px">② 「ん」で終わる言葉を相手に言わせる</p>
+        <p style="font-size:12px;color:#374151;line-height:1.7;margin:0">「ん」で終わる言葉で応じないといけない状況を作ることが勝利への道。例えば「ん」で終わる言葉が多い頭文字（に、さ等）に誘導する言葉を選ぶ戦略があります。「にんじん」「さんりん」などを想定しながら進めましょう。</p>
+      </div>
+      <div style="background:#fef9c3;border-radius:8px;padding:10px">
+        <p style="font-size:13px;font-weight:700;color:#854d0e;margin:0 0 3px">③ 「を」「は」など特殊文字スタートの罠を避ける</p>
+        <p style="font-size:12px;color:#374151;line-height:1.7;margin:0">「を」「は」「が」など、始まる言葉がほとんどない文字で終わる言葉を相手に言わせると有利です。例えば「わがはい（吾輩）」と言わせると相手は「い」スタートの言葉を考えないといけませんが、「を」「は」「が」スタートだと詰まります。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="max-w-lg mx-auto px-4" style="margin-bottom:16px">
+  <div style="background:#fff;border-radius:14px;padding:14px 16px;box-shadow:0 2px 12px rgba(0,0,0,.06)">
+    <h2 style="font-size:15px;font-weight:700;color:#1e293b;margin:0 0 10px;border-left:3px solid #6366f1;padding-left:10px">🧠 しりとりの知育効果</h2>
+    <p style="font-size:13px;color:#374151;line-height:1.8;margin-bottom:8px">しりとりは単なる遊びにとどまらず、多くの認知スキルを鍛えます。①語彙力の強化（普段使わない言葉を思い出す訓練）、②ワーキングメモリの活用（相手の言葉・使った言葉を覚えながら次を考える）、③言語処理速度の向上（素早く言葉を検索する能力）、④注意・集中力の維持（ゲームを通じた持続的な集中）が鍛えられます。</p>
+    <p style="font-size:13px;color:#374151;line-height:1.8;margin-bottom:8px">子どもとのしりとりは、語彙獲得の自然な機会にもなります。大人が少し難しい言葉を使い「それどういう意味？」という会話を生むことで、遊びながら学習効果が生まれます。また高齢者の認知機能維持にも効果があるとされ、デイサービスや介護施設でもしりとりが取り入れられています。</p>
+    <div style="background:#f0fdf4;border-radius:8px;padding:10px">
+      <p style="font-size:12px;font-weight:700;color:#166534;margin:0 0 4px">🎮 このゲームについて</p>
+      <p style="font-size:12px;color:#374151;line-height:1.7;margin:0">「しりとりゲーム」はAppADayCreatorが提供する無料ブラウザゲームです。AIと対戦するしりとりで、かんたん・ふつう・むずかしいの3難易度から選択できます。登録・インストール不要でスマートフォンからすぐにプレイできます。</p>
+    </div>
+  </div>
 </div>
 
 <div class="max-w-lg mx-auto px-4"><section  style="background:#f0f9ff;border:1px solid #bae6fd;padding:16px;text-align:center;font-size:12px;color:#0369a1;border-radius:14px;margin-bottom:16px;">
