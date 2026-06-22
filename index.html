@@ -101,6 +101,46 @@
     .achv-grid{ display:flex; gap:.6rem; flex-wrap:wrap; justify-content:center; }
     .achv{ width:54px; height:54px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.5rem; background:#fff7f5; border:2px solid var(--line); }
     .achv.lit{ background:linear-gradient(135deg,#ffe6a8,#ffcf6e); border-color:#ffcf6e; }
+    /* design02: app icon nav bar */
+    .app-iconbar{ max-width:760px; margin:-14px auto 0; position:relative; z-index:5; background:linear-gradient(120deg,#FF6B6B,#ff8a7a); border-radius:20px; box-shadow:0 8px 18px rgba(255,107,107,.28); display:flex; justify-content:space-around; padding:.55rem .4rem; }
+    .app-ico{ width:42px; height:42px; border-radius:13px; display:flex; align-items:center; justify-content:center; font-size:1.25rem; color:#fff; text-decoration:none; transition:.18s; }
+    .app-ico.active{ background:rgba(255,255,255,.25); }
+    .app-ico:hover{ background:rgba(255,255,255,.18); }
+    /* design02: 対戦の流れ flow */
+    .flow-strip{ display:flex; align-items:center; justify-content:center; gap:.35rem; flex-wrap:wrap; background:linear-gradient(120deg,#FFF1EE,#EFFBFA); border-radius:14px; padding:.7rem; margin-bottom:1rem; }
+    .flow-chip{ min-width:38px; height:38px; padding:0 .5rem; border-radius:12px; background:#fff; border:2px solid var(--line); display:flex; align-items:center; justify-content:center; font-weight:900; color:var(--primary); font-size:1.05rem; }
+    .flow-chip.q{ color:var(--accent-d); border-color:#b9ece8; border-style:dashed; }
+    .flow-arrow{ color:var(--muted); font-weight:900; }
+    /* design02: action buttons (sound / pass / menu) */
+    .act-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:.6rem; margin-bottom:1rem; }
+    .act-btn{ display:flex; flex-direction:column; align-items:center; gap:.15rem; padding:.6rem .3rem; border-radius:14px; border:2px solid var(--line); background:#fff; font-weight:800; font-size:.78rem; cursor:pointer; font-family:inherit; color:var(--ink); transition:.15s; }
+    .act-btn .ai{ font-size:1.2rem; }
+    .act-btn.snd{ border-color:#b9ece8; color:var(--accent-d); }
+    .act-btn.pass{ border-color:#ffc4bc; color:var(--primary); }
+    .act-btn.menu{ border-color:#ffc4bc; color:var(--primary); }
+    .act-btn:hover{ filter:brightness(.98); transform:translateY(-1px); }
+    .act-btn.muted{ opacity:.55; }
+    /* design02: daily challenge */
+    .daily-card{ display:flex; align-items:center; gap:1rem; }
+    .daily-bar{ flex:1; height:14px; border-radius:8px; background:#ffe1dc; overflow:hidden; }
+    .daily-bar > i{ display:block; height:100%; border-radius:8px; background:linear-gradient(120deg,#4ECDC4,#37bcb3); }
+    .daily-reward{ text-align:center; font-weight:800; color:var(--accent-d); font-size:.8rem; }
+    .daily-reward .em{ font-size:1.7rem; display:block; }
+    /* design02: stats donut + recent */
+    .stat-wrap{ display:grid; grid-template-columns:auto 1fr; gap:1.1rem; align-items:center; }
+    .donut{ width:108px; height:108px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+    .donut > span{ width:74px; height:74px; border-radius:50%; background:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+    .donut b{ font-size:1.5rem; font-weight:900; color:var(--ink); line-height:1; }
+    .donut small{ font-size:.62rem; color:var(--muted); }
+    .stat-legend{ font-size:.82rem; color:#555f6b; }
+    .stat-legend div{ display:flex; align-items:center; gap:.4rem; padding:.18rem 0; }
+    .stat-legend i{ width:11px; height:11px; border-radius:3px; display:inline-block; }
+    .recent-list{ margin-top:1rem; display:flex; flex-direction:column; gap:.5rem; }
+    .recent-item{ display:flex; align-items:center; justify-content:space-between; background:#fff7f5; border:1px solid var(--line); border-radius:12px; padding:.55rem .8rem; font-size:.85rem; }
+    .recent-item .rl{ display:flex; align-items:center; gap:.5rem; font-weight:700; color:var(--ink); }
+    .res-tag{ font-size:.72rem; font-weight:800; padding:.15rem .55rem; border-radius:8px; }
+    .res-win{ background:#e6faf7; color:#2a9d92; }
+    .res-lose{ background:#ffe9e9; color:#d64545; }
     footer { background: #fff; text-align: center; padding: 2rem 1rem; margin-top: 2rem; color: #8a94a0; font-size: 0.85rem; border-top:3px solid var(--primary); }
     footer a { color: var(--accent-d); text-decoration: none; }
     footer .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
@@ -230,6 +270,15 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
   <span id="sh-streak-badge" style="display:none;background:#fff;color:#c47b00;font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid #ffd86b;white-space:nowrap;margin-top:8px;display:inline-block;position:relative;"></span>
 </header>
 
+<!-- design02: アプリアイコンナビ -->
+<nav class="app-iconbar" aria-label="ナビゲーション">
+  <a class="app-ico active" href="#main" title="ホーム" aria-label="ホーム">🏠</a>
+  <a class="app-ico" href="#sh-ranking-card" title="ランキング" aria-label="ランキング">🏆</a>
+  <a class="app-ico" href="#sh-stats-card" title="統計" aria-label="統計">📊</a>
+  <a class="app-ico" href="#sh-badge-card" title="バッジ" aria-label="バッジ">🏅</a>
+  <a class="app-ico" href="#setupCard" title="設定" aria-label="設定">⚙️</a>
+</nav>
+
 <main id="main" role="main">
   <!-- V1改善: ゲーム説明セクション（モバイル優先） -->
   <section class="card" style="background:linear-gradient(120deg,#FFF1EE,#EFFBFA);border:2px solid #ffe1dc;">
@@ -334,6 +383,11 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
         <button id="pauseBtn" onclick="togglePause()" style="background:#fff7f5;border:2px solid #ffe1dc;border-radius:10px;padding:4px 12px;color:var(--primary);font-size:0.9rem;font-weight:800;cursor:pointer;">⏸</button>
       </div>
     </div>
+    <!-- design02: 対戦の流れ -->
+    <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.4rem;font-weight:700;">対戦の流れ：</div>
+    <div class="flow-strip" id="flowStrip">
+      <div class="flow-chip">？</div>
+    </div>
     <div class="current-word-box">
       <div class="current-word-label" id="turnLabel">🤖 CPUの言葉</div>
       <div class="current-word" id="currentWord">-</div>
@@ -343,6 +397,12 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
     <div class="input-area">
       <input type="text" class="word-input" id="wordInput" placeholder="ことばを入力" maxlength="20" aria-label="ひらがなで入力">
       <button class="submit-btn" onclick="submitWord()" id="submitBtn">送る ➤</button>
+    </div>
+    <!-- design02: サウンド / パス / メニュー -->
+    <div class="act-row">
+      <button class="act-btn snd" id="soundBtn" onclick="toggleSound()" aria-label="サウンド切り替え"><span class="ai">🔊</span>サウンド</button>
+      <button class="act-btn pass" onclick="giveUp()" aria-label="パスする"><span class="ai">⏭️</span>パス</button>
+      <button class="act-btn menu" onclick="backToSetup()" aria-label="メニューに戻る"><span class="ai">☰</span>メニュー</button>
     </div>
     <div>
       <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.4rem;font-weight:600;">使用済み単語：</div>
@@ -383,8 +443,23 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
     <button class="start-btn" onclick="backToSetup()" style="background:#fff;border:2px solid #ffe1dc;color:var(--muted);box-shadow:none;margin-top:0.5rem;">⚙️ 設定に戻る</button>
   </section>
 
+  <!-- design02: デイリーチャレンジ -->
+  <section class="card" id="sh-daily-card">
+    <h2>🎁 デイリーチャレンジ</h2>
+    <div class="daily-card">
+      <div style="flex:1;">
+        <div style="display:flex;justify-content:space-between;font-size:0.82rem;font-weight:700;color:var(--ink);margin-bottom:0.4rem;">
+          <span>今日の対戦回数</span><span id="dailyCount">0 / 5</span>
+        </div>
+        <div class="daily-bar"><i id="dailyFill" style="width:0%"></i></div>
+        <p style="font-size:0.75rem;color:var(--muted);margin-top:0.5rem;">5回プレイでボーナスポイント獲得！</p>
+      </div>
+      <div class="daily-reward"><span class="em">🎁</span>+50pt</div>
+    </div>
+  </section>
+
   <!-- 実績・連勝（デザイン02準拠の達成エリア） -->
-  <section class="card">
+  <section class="card" id="sh-badge-card">
     <h2>🏅 実績・連勝トラッカー</h2>
     <div class="score-display" style="margin-bottom:1rem;">
       <div class="score-box"><div class="sv" style="color:var(--primary)" id="achStreak">0</div><div class="sl">🔥 連勝日数</div></div>
@@ -398,6 +473,29 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
       <div class="achv" title="語彙マスター">📚</div>
       <div class="achv" title="スピード王">⚡</div>
       <div class="achv" title="チャレンジ達成">🎯</div>
+    </div>
+  </section>
+
+  <!-- design02: ランキング -->
+  <section class="card" id="sh-ranking-card">
+    <h2>🏆 ランキング（自己ベスト5）</h2>
+    <div id="sh-ranking-board" style="font-size:0.9rem;"></div>
+  </section>
+
+  <!-- design02: 統計 + 最近の対戦 -->
+  <section class="card" id="sh-stats-card">
+    <h2>📊 統計</h2>
+    <div class="stat-wrap">
+      <div class="donut" id="statDonut"><span><b id="statTotal">0</b><small>総対戦</small></span></div>
+      <div class="stat-legend">
+        <div><i style="background:var(--accent)"></i>あなたの勝利 <b id="statWin" style="margin-left:auto;color:var(--accent-d);">0</b></div>
+        <div><i style="background:var(--primary)"></i>CPUの勝利 <b id="statLose" style="margin-left:auto;color:var(--primary);">0</b></div>
+        <div><i style="background:#ffd86b"></i>勝率 <b id="statRate" style="margin-left:auto;color:#c47b00;">-</b></div>
+      </div>
+    </div>
+    <div style="font-size:0.82rem;color:var(--muted);margin:1rem 0 0;font-weight:700;">最近の対戦</div>
+    <div class="recent-list" id="recentList">
+      <div class="recent-item" style="justify-content:center;color:var(--muted);font-size:0.82rem;">まだ対戦記録がありません。さっそく対戦してみましょう！</div>
     </div>
   </section>
 
