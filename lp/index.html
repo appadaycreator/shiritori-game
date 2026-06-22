@@ -50,6 +50,15 @@ header.nav{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,.92)
 .hero{ position:relative; overflow:hidden; background:linear-gradient(160deg,#FFE7E1 0%,#FFF0F4 50%,#E9FBF9 100%); padding:2.6rem 0 3rem; }
 .hero::before{ content:"あ"; position:absolute; left:-10px; top:30%; font-size:7rem; font-weight:900; color:rgba(255,107,107,.08); }
 .hero::after{ content:"り"; position:absolute; right:4%; bottom:8%; font-size:6rem; font-weight:900; color:rgba(78,205,196,.12); }
+.kana-deco{ position:absolute; inset:0; pointer-events:none; z-index:0; }
+.kana-tile{ position:absolute; width:54px; height:54px; border-radius:16px; background:#fff; border:2px solid var(--line); display:flex; align-items:center; justify-content:center; font-size:1.7rem; font-weight:900; color:var(--primary); box-shadow:0 10px 20px rgba(255,107,107,.14); }
+.kana-tile.t2{ color:var(--accent-d); border-color:#cdf3ef; box-shadow:0 10px 20px rgba(78,205,196,.16); }
+.kana-tile.k1{ left:3%; top:14%; transform:rotate(-10deg); }
+.kana-tile.k2{ left:8%; bottom:16%; transform:rotate(8deg); }
+.kana-tile.k3{ right:7%; top:10%; transform:rotate(7deg); }
+.kana-tile.k4{ right:2%; bottom:24%; transform:rotate(-9deg); }
+.hero-grid{ position:relative; z-index:1; }
+@media(max-width:820px){ .kana-deco{ display:none; } }
 .hero-grid{ display:grid; grid-template-columns:1fr 1.05fr; gap:2rem; align-items:center; }
 .hero-badge{ display:inline-block; background:#fff; color:var(--primary); font-weight:800; font-size:.8rem; padding:.35rem .9rem; border-radius:50px; border:2px solid var(--line); margin-bottom:1rem; }
 .hero h1{ font-size:2.9rem; line-height:1.18; font-weight:900; color:var(--primary); letter-spacing:-.5px; }
@@ -171,6 +180,12 @@ footer .copy{ text-align:center; color:#9aa4b0; font-size:.78rem; margin-top:1.2
 
 <!-- Hero -->
 <section class="hero" id="top">
+  <div class="kana-deco" aria-hidden="true">
+    <span class="kana-tile k1">あ</span>
+    <span class="kana-tile t2 k2">ち</span>
+    <span class="kana-tile t2 k3">さ</span>
+    <span class="kana-tile k4">と</span>
+  </div>
   <div class="wrap hero-grid">
     <div>
       <span class="hero-badge">🎉 登録不要・完全無料ですぐ遊べる</span>
